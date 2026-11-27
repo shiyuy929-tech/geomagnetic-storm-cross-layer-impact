@@ -1,19 +1,9 @@
-# Analysis code for the geomagnetic-storm cross-layer study
+# Geomagnetic storm cross-layer study: analysis and figure code
 
-This repository provides a working code package for Figures 2–5 and an index of the scripts used for the analyses and figure production. The source scripts retain their original directory structure inside `Fig2-5_GitHub_draft_20261127.zip`.
+Python scripts used for the working versions of Figures 2–5 are available in `src/`. The original directory hierarchy is preserved because the scripts import one another and resolve input files relative to these paths. `run_figures.py` selects a figure driver. See [FIGURE_GUIDE.md](FIGURE_GUIDE.md) for entry points, purpose, known inputs and outputs, and [INTERMEDIATES.md](INTERMEDIATES.md) for provenance and sharing status.
 
-**Current scope:** the archive contains scripts and an environment file, but not the observational data, reanalysis files, cached arrays or processed tables required to run them. The figure scripts cannot be run from this repository alone. A separate working package was used to regenerate Figures 2–5 from a mixture of original and previously processed inputs. The full workflow from source archives to every intermediate has not been verified. Figure 1 and any supplementary figures or tables are not covered by this code package.
+**Current reproducibility scope:** this repository includes scripts, but not the observation files, reanalysis data and processed caches needed to execute them. A separate working package was previously used to reproduce the four figures from a mixture of raw and processed inputs. The complete raw-to-result workflow and the exact minimal input set are not yet verified. Figure 1, supplementary figures and tables are outside this package. The script filenames describe working versions and should be checked against the final manuscript.
 
-## Repository contents
+The four figure drivers are invoked from the repository root using `python run_figures.py 2` (or `3`, `4`, `5`, `all`). These commands require inputs that are currently **not included**. `requirements.txt` is the recorded package list; the environment and input placement must be checked before a fresh run. The earlier rendering check used Windows and Python 3.10.8; see [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
 
-- `Fig2-5_GitHub_draft_20261127.zip`: source scripts, figure runner, environment file and an inventory of possible inputs. The archive must be extracted to inspect the code.
-- `FIGURE_GUIDE.md`: figure-by-figure entry points, associated analysis and known input requirements.
-- `DATA_SOURCES.md`: external data sources and the scope of the missing inputs.
-- `REPRODUCIBILITY.md`: checks carried out with the separate working package and their limitations.
-- `requirements.txt`: packages recorded for the working environment.
-
-## Code structure and figure runner
-
-After extracting the archive, keep its `src` directory structure intact. The main entries and analysis purposes are documented in `FIGURE_GUIDE.md`. The runner accepts `python run_figures.py 2`, `3`, `4`, `5` or `all`; **these commands require missing data and intermediates**, so they will not work with the archive alone. The input inventory in the archive is a list of possible inputs, not a verified minimal dependency list or a set of download instructions.
-
-The working package was tested with Python 3.10.8 on Windows using the environment in `requirements.txt`. The scripts are being released as a working research package; no licence is specified pending confirmation by the code owners. Check the documented data access and reuse conditions before redistributing third-party materials.
+External datasets, use conditions and acknowledgements are described in [DATA_SOURCES.md](DATA_SOURCES.md). `input_inventory.csv` is an inventory of possible files in a separate working package, not a verified dependency list. No code licence has been assigned; code owners need to decide how the scripts may be reused.
