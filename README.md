@@ -1,23 +1,19 @@
-# Figure 2–5 code — review draft
+# Analysis code for the geomagnetic-storm cross-layer study
 
-**Status: local review draft, not a complete reproducibility release.**
+This repository provides a working code package for Figures 2–5 and an index of the scripts used for the analyses and figure production. The source scripts retain their original directory structure inside `Fig2-5_GitHub_draft_20261127.zip`.
 
-This folder contains Python scripts and an environment file copied from the 2026-11-21 working package. Data, cached arrays, maps and figure outputs have deliberately not been copied. Consequently `run_figures.py` will not run successfully from this folder alone. `input_inventory.csv` lists possible non-code inputs present in the original working package; it is an inventory, not a verified minimal dependency list.
+**Current scope:** the archive contains scripts and an environment file, but not the observational data, reanalysis files, cached arrays or processed tables required to run them. The figure scripts cannot be run from this repository alone. A separate working package was used to regenerate Figures 2–5 from a mixture of original and previously processed inputs. The full workflow from source archives to every intermediate has not been verified. Figure 1 and any supplementary figures or tables are not covered by this code package.
 
-## Entry points
+## Repository contents
 
-- Figure 2: `src/元旦磁暴_跨层波数1/two_region_mechanism_profiles_20261021/plot_figure2_temperature_dailymean_20261121.py`
-- Figure 3: `src/元旦磁暴_跨层波数1/plot_combined_environment_w1_ep_qy_legend_bottom_20261109.py`
-- Figure 4: `src/A研究进展报告/ERA5_2025元旦磁暴研究报告/plot_figure4_phase_envelope_180mm_aligned_20261107.py`
-- Figure 5: `src/A研究进展报告/ERA5_2025元旦磁暴研究报告/plot_figure5_height_wind_weather_180mm_20261108.py`
+- `Fig2-5_GitHub_draft_20261127.zip`: source scripts, figure runner, environment file and an inventory of possible inputs. The archive must be extracted to inspect the code.
+- `FIGURE_GUIDE.md`: figure-by-figure entry points, associated analysis and known input requirements.
+- `DATA_SOURCES.md`: external data sources and the scope of the missing inputs.
+- `REPRODUCIBILITY.md`: checks carried out with the separate working package and their limitations.
+- `requirements.txt`: packages recorded for the working environment.
 
-## Before sharing
+## Code structure and figure runner
 
-1. Check each figure against the final manuscript and establish code ownership/licences.
-2. Trace each cached intermediate to its source and the corresponding processing script.
-3. Determine redistributable inputs and exact download instructions for externally hosted data.
-4. Check local paths, credentials, personal information and third-party assets.
-5. Set up a clean environment and reproduce the outputs from documented inputs; record limitations.
-6. Decide a licence with the code owners and select a repository release/version.
+After extracting the archive, keep its `src` directory structure intact. The main entries and analysis purposes are documented in `FIGURE_GUIDE.md`. The runner accepts `python run_figures.py 2`, `3`, `4`, `5` or `all`; **these commands require missing data and intermediates**, so they will not work with the archive alone. The input inventory in the archive is a list of possible inputs, not a verified minimal dependency list or a set of download instructions.
 
-The existing `Fig2-5_code_package_20261121` working package records previous figure regeneration using a mixture of original and preprocessed inputs; the complete raw-data-to-results workflow has not been verified.
+The working package was tested with Python 3.10.8 on Windows using the environment in `requirements.txt`. The scripts are being released as a working research package; no licence is specified pending confirmation by the code owners. Check the documented data access and reuse conditions before redistributing third-party materials.
