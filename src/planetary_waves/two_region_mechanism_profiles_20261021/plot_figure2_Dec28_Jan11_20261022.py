@@ -228,7 +228,7 @@ def particles():
 
 
 def indices():
-    legacy = ROOT.parent / 'A研究进展报告/ERA5_2025元旦磁暴研究报告/data'
+    legacy = ROOT.parent / 'era5/data'
     path = source(ROOT / 'PCN_AE_three_newyear_cases_20261017/AE_PCN_2025_Dec27_Jan20_1min.csv')
     minute = pd.read_csv(path)
     minute['UTC_time'] = pd.to_datetime(minute.UTC_time, utc=True).dt.tz_localize(None)

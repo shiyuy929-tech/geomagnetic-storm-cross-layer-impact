@@ -30,7 +30,7 @@ import analyze_vortex_regional_extension as region
 from analyze_w1_w2_vortex_20261025 import geometry
 
 ROOT = Path(__file__).resolve().parent
-WAVE = ROOT.parents[1] / '元旦磁暴_跨层波数1'
+WAVE = ROOT.parent / 'planetary_waves'
 OUT = ROOT / 'results' / 'upper_wave_vortex_two_stage_20261026'
 COMMON = ROOT / 'results/ERA5_MLS_W1_PV_link_20261025/common_layer_daily.csv'
 FLUX = ROOT / 'results/planetary_wave_vortex_mechanism_20261026/Plumb1985_regional_vertical_flux_daily.csv'

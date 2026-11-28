@@ -18,7 +18,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parent
 PROJECT = ROOT.parent
-LEGACY = PROJECT / "A研究进展报告" / "ERA5_2025元旦磁暴研究报告"
+LEGACY = PROJECT / "era5"
 AUDIT = ROOT / "propagation_audit_20260927"
 
 import h5py

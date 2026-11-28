@@ -37,7 +37,7 @@ import analyze_upper_vortex_followup_20261029 as checked
 import plot_era5_daily_vortex_boundaries as boundary_base
 import analyze_vortex_regional_extension as boundary_region
 
-WAVE=ROOT.parents[1]/'元旦磁暴_跨层波数1'
+WAVE=ROOT.parent/'planetary_waves'
 OUT=ROOT/'results/Figure5_wave_structure_weather_20261030'
 ALIGNED=WAVE/'aligned_daily_crosslevel_20261024/aligned_daily_fields.npz'
 SURFACE=WAVE/'troposphere_coupling_20261023/surface_temperature_anomaly_to_Jan31.npz'

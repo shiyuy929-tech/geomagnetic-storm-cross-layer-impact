@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import h5py
 
-WAVE = ROOT.parents[1]/'元旦磁暴_跨层波数1'
+WAVE = ROOT.parent/'planetary_waves'
 DATA = ROOT/'data/stratosphere_troposphere_followup_20261029'
 OUT = ROOT/'results/upper_vortex_followup_20261029'
 G, A, OMEGA, KAPPA = 9.80665, 6371000., 7.292115e-5, 287.05/1004.
